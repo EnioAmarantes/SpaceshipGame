@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class scriptPc : MonoBehaviour
@@ -8,6 +6,7 @@ public class scriptPc : MonoBehaviour
     private float largura;
 
     private Rigidbody2D rbd;
+    public GameObject tiro;
     public float vel;
     // Start is called before the first frame update
     void Start()
@@ -40,6 +39,17 @@ public class scriptPc : MonoBehaviour
         else if(transform.position.y < -altura)
             transform.position =
                     new Vector2(transform.position.x, -altura);
+
+            Atirar();
+
+    }
+
+    private void Atirar()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Instantiate(tiro, transform.position, Quaternion.identity);
+        }
 
     }
 }

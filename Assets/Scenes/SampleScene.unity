@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0649206321a81af428152dae8973aa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiro: {fileID: 5200488671256904949, guid: 20a7f798c5f5f6243897694985894102, type: 3}
   vel: 0
 --- !u!50 &1163128677
 Rigidbody2D:
@@ -370,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4893ae369d42a2489885b7ba08d5088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npc: {fileID: 2417357744640632527, guid: 725957e8727b30147952c66431b6f79a, type: 3}
 --- !u!4 &1475810327
 Transform:
   m_ObjectHideFlags: 0
