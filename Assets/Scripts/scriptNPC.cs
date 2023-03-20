@@ -17,6 +17,11 @@ public class scriptNPC : MonoBehaviour
     {
         if (transform.position.y < -Camera.main.orthographicSize)
             Destroy(this.gameObject);
-        
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+        Destroy(this.gameObject);
     }
 }
