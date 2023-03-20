@@ -48,7 +48,10 @@ public class scriptPc : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Instantiate(tiro, transform.position, Quaternion.identity);
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            float altura = sr.sprite.bounds.extents.y;
+            Vector2 pos = new Vector2(transform.position.x, transform.position.y + altura);
+            Instantiate(tiro, pos, Quaternion.identity);
         }
 
     }
