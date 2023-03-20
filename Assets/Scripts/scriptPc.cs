@@ -8,6 +8,7 @@ public class scriptPc : MonoBehaviour
     private Rigidbody2D rbd;
     public GameObject tiro;
     public float vel;
+    private AudioSource som;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class scriptPc : MonoBehaviour
         largura = altura * Camera.main.aspect;
         vel = 10;
         rbd = GetComponent<Rigidbody2D>();
+        som = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,10 +48,11 @@ public class scriptPc : MonoBehaviour
 
     private void Atirar()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
+            som.Play();
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
-            float altura = sr.sprite.bounds.extents.y;
+            float altura = sr.sprite.bounds.extents.y / 2;
             Vector2 pos = new Vector2(transform.position.x, transform.position.y + altura);
             Instantiate(tiro, pos, Quaternion.identity);
         }
