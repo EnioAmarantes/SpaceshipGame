@@ -12,11 +12,6 @@ public class RespawnScript : MonoBehaviour
         InvokeRepeating("Respawn", 0, 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void Respawn()
     {
         float positionX = Random.Range(-altura, altura);

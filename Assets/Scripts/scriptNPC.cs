@@ -3,6 +3,7 @@ using UnityEngine;
 public class scriptNPC : MonoBehaviour
 {
     private Rigidbody2D rbd;
+    public int xp = 5;
     public float vel;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,9 @@ public class scriptNPC : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.tag.Equals("shoot"))
+            scoreScript.scoreIncrement(xp);
+        
         Destroy(collision.gameObject);
         Destroy(this.gameObject);
     }
