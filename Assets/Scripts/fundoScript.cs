@@ -7,7 +7,7 @@ public class fundoScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 5;
+        speed = 8;
         rbd = GetComponent<Rigidbody2D>();
         rbd.velocity = new Vector2(0, -speed);
     }

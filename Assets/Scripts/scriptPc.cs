@@ -48,7 +48,7 @@ public class scriptPc : MonoBehaviour
 
     private void Atirar()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !gameScript.pause)
         {
             som.Play();
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
